@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { NextPage } from 'next'
-import ArrowVector from '../components/hero/arrow-vector'
-import HeroText from '../components/hero/hero-text'
 import Gallery from '../components/gallery/gallery'
 import Slider from '../components/slider/slider'
 import Header from '../components/header/header'
+import Hero from '../components/hero/hero'
 
 const Home: NextPage = () => {
   return (
@@ -19,17 +18,12 @@ const Home: NextPage = () => {
       <Header></Header>
 
       {/* HERO */}
-      <div className={styles.hero_bg}>
-        <div className={styles.hero}>
-          <ArrowVector></ArrowVector>
-          <HeroText></HeroText>
-        </div>
-      </div>
+      <Hero></Hero>
 
-      {/* Galeria */}
+
       <Gallery></Gallery>
 
-      {/* Slider */}
+  
       <div className={styles.slider_bg}>
         <Slider></Slider>
       </div>

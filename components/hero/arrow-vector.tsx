@@ -1,4 +1,4 @@
-import styles from './arrow-vector.module.css'
+import styles from './hero.module.css'
 
 const ArrowVector = () =>{
     return(

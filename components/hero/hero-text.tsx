@@ -1,4 +1,4 @@
-import styles from './hero-text.module.css'
+import styles from './hero.module.css'
 
 const HeroText = () =>{
     return(
