@@ -52,6 +52,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.link_container:hover{
+  cursor: pointer;
+}
 .link_vector{
   position: relative;
   top: 1px;
