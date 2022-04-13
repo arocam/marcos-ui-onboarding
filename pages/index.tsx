@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Image from 'next/image'
 import { NextPage } from 'next'
-import ArrowVector from '../comps/arrow-vector'
-import HeroText from '../comps/hero-text'
-import Gallery from '../comps/gallery'
-import Slider from '../comps/slider'
+import ArrowVector from '../components/hero/arrow-vector'
+import HeroText from '../components/hero/hero-text'
+import Gallery from '../components/gallery/gallery'
+import Slider from '../components/slider/slider'
+import Header from '../components/header/header'
 
 const Home: NextPage = () => {
   return (
@@ -16,9 +16,7 @@ const Home: NextPage = () => {
       </Head>
 
       {/* HEADER */}
-      <header className={styles.header}>
-        <Image className={styles.logo} src="/img/aluxion.png" height={24} width={133}></Image>
-      </header>
+      <Header></Header>
 
       {/* HERO */}
       <div className={styles.hero_bg}>
