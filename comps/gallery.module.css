@@ -1,0 +1,21 @@
+.gallery_bg{
+    position: absolute;
+    top: 50vh;
+    z-index: -2;
+    background-color: #D6F379;
+}
+.gallery_container{
+    display: flex;
+    transform: rotate(-23.34deg);
+}
+.gallery_column{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+.gallery_column:nth-child(odd){
+    margin-top: 50px;
+}
+.gallery_image{
+    margin-bottom: 30px;
+}

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { NextPage } from 'next'
 import ArrowVector from '../comps/arrow-vector'
 import HeroText from '../comps/hero-text'
+import Gallery from '../comps/gallery'
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +24,11 @@ const Home: NextPage = () => {
         <ArrowVector></ArrowVector>
         <HeroText></HeroText>
       </div>
+
+      {/* Galeria */}
+      <Gallery></Gallery>
+
+
     </div>
   )
 }
