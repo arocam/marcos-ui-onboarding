@@ -5,6 +5,7 @@ import { NextPage } from 'next'
 import ArrowVector from '../comps/arrow-vector'
 import HeroText from '../comps/hero-text'
 import Gallery from '../comps/gallery'
+import Slider from '../comps/slider'
 
 const Home: NextPage = () => {
   return (
@@ -30,6 +31,10 @@ const Home: NextPage = () => {
       {/* Galeria */}
       <Gallery></Gallery>
 
+      {/* Slider */}
+      <div className={styles.slider_bg}>
+        <Slider></Slider>
+      </div>
 
     </div>
   )
