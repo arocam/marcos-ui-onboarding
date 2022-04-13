@@ -1,0 +1,30 @@
+.title{
+    font-size: 40px;
+    margin: 27px 0 38px 0;
+  }
+  @media (min-width: 992px){
+    .title{
+      font-size: 64px;
+    }
+  }
+  .parr{
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  .c_1{
+    color: #D6F379;
+  }
+  .c_2{
+    color: #fff;
+  }
+  .link_container{
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .link_vector{
+    position: relative;
+    top: 1px;
+  }

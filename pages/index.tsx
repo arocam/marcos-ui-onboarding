@@ -12,10 +12,12 @@ const Home: NextPage = () => {
       <Head>
         <title>UI Onboarding</title>
       </Head>
+      
       {/* HEADER */}
       <header className={styles.header}>
         <Image className={styles.logo} src="/img/aluxion.png" height={24} width={133}></Image>
       </header>
+
       {/* HERO */}
       <div className={styles.hero}>
         <ArrowVector></ArrowVector>

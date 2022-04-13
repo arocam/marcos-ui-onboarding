@@ -1,0 +1,18 @@
+.arrow_vector_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  @media (min-width: 992px){
+    .arrow_vector_container{
+      width: auto;
+    }
+  }
+  .arrow_vector{
+    width: 222px;
+  }
+  @media (min-width: 992px){
+    .arrow_vector{
+      width: 464px;
+    }
+  }
