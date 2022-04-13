@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import { NextPage } from 'next'
 import ArrowVector from '../comps/arrow-vector'
+import HeroText from '../comps/hero-text'
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
       {/* HERO */}
       <div className={styles.hero}>
         <ArrowVector></ArrowVector>
+        <HeroText></HeroText>
       </div>
     </div>
   )
