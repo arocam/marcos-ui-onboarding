@@ -17,3 +17,13 @@ a {
 * {
   box-sizing: border-box;
 }
+/*TEMPORAL*/
+.arrow-vector{
+  width: 222px;
+
+}
+@media (min-width: 992px){
+  .arrow-vector{
+    width: 464px;
+  }
+}
