@@ -20,9 +20,11 @@ const Home: NextPage = () => {
       </header>
 
       {/* HERO */}
-      <div className={styles.hero}>
-        <ArrowVector></ArrowVector>
-        <HeroText></HeroText>
+      <div className={styles.hero_bg}>
+        <div className={styles.hero}>
+          <ArrowVector></ArrowVector>
+          <HeroText></HeroText>
+        </div>
       </div>
 
       {/* Galeria */}
