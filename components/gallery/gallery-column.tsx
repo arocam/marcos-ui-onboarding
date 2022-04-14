@@ -4,11 +4,9 @@ export const GalleryColumn = styled.div`
 
         display: flex;
         flex-direction: column;
-        margin-right: 30px;
+        margin-right: 30px;    
     
-
-    
-    &:nth-child(odd){
-        margin-top: 50px;
+    &:nth-child(even){
+        margin-bottom: 70px;
     }
 `

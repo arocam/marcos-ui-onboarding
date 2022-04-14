@@ -31,12 +31,14 @@ const Gallery = () =>{
     const column3 = useRef();
     const column4 = useRef();
     const column5 = useRef();
+    const column6 = useRef();
 
-    let tlColumn1 = gsap.timeline({scrollTrigger:{trigger: '.c1',markers: true,start: '',end:'bottom -1000',scrub: 3},})
-    let tlColumn2 = gsap.timeline({scrollTrigger:{trigger: '.c2',markers: true,start: '',end:'bottom -1000',scrub: 3},})
-    let tlColumn3 = gsap.timeline({scrollTrigger:{trigger: '.c3',markers: true,start: '',end:'bottom -1000',scrub: 3},})
-    let tlColumn4 = gsap.timeline({scrollTrigger:{trigger: '.c4',markers: true,start: '',end:'bottom -1000',scrub: 3},})
-    let tlColumn5 = gsap.timeline({scrollTrigger:{trigger: '.c5',markers: true,start: '',end:'bottom -1000',scrub: 3},})
+    let tlColumn1 = gsap.timeline({scrollTrigger:{trigger: '.gallery_bg',markers: true,start: '',end:'bottom -1000',scrub: .5},})
+    let tlColumn2 = gsap.timeline({scrollTrigger:{trigger: '.gallery_bg',markers: true,start: '',end:'bottom -1000',scrub: .5},})
+    let tlColumn3 = gsap.timeline({scrollTrigger:{trigger: '.gallery_bg',markers: true,start: '',end:'bottom -1000',scrub: .5},})
+    let tlColumn4 = gsap.timeline({scrollTrigger:{trigger: '.gallery_bg',markers: true,start: '',end:'bottom -1000',scrub: .5},})
+    let tlColumn5 = gsap.timeline({scrollTrigger:{trigger: '.gallery_bg',markers: true,start: '',end:'bottom -1000',scrub: .5},})
+    let tlColumn6 = gsap.timeline({scrollTrigger:{trigger: '.gallery_bg',markers: true,start: '',end:'bottom -1000',scrub: .5},})
 
     useEffect(()=>{
         tlColumn1.to(column1.current,{y: '-200'})
@@ -44,9 +46,8 @@ const Gallery = () =>{
         tlColumn3.to(column3.current,{y: '-200'})
         tlColumn4.to(column4.current,{y: '200'})
         tlColumn5.to(column5.current,{y: '-200'})
-    
-    
-    }, [])
+        tlColumn6.to(column6.current,{y: '200'})
+    }, []);
 
     const columns = [
         [image1, image2, image3,image4], [image4, image5, image6, image7], [image7, image8, image9, image10], [image10, image11, image12, image13], [image13, image14, image15, image1],[image3, image5, image9, image2]
@@ -86,6 +87,13 @@ const Gallery = () =>{
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c5" ref={column5}>
+                    {columns[4].map(image =>
+                        <GalleryImage>
+                            <Image src={image} className="gallery-image"></Image>
+                        </GalleryImage>
+                    )}
+                </GalleryColumn>
+                <GalleryColumn className="c6" ref={column6}>
                     {columns[4].map(image =>
                         <GalleryImage>
                             <Image src={image} className="gallery-image"></Image>

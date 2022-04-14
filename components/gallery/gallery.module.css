@@ -8,7 +8,8 @@
 
 .gallery_container{
     position: absolute;
-    top: -70%;
+    top: -500px;
+
     display: flex;
     flex-wrap: nowrap;
     transform: rotate(-20deg);
