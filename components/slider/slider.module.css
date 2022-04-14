@@ -1,1 +1,23 @@
 /*SLIDER STYLES HERE*/
+.slider_bg{
+    width: 100%;
+    height: 100vh;/*TEMPORAL*/
+    background-color: #222222;
+}
+.slider_container{
+    width: 100%;
+    background-color: red;
+}
+.slide_card{
+    padding: 24px 19px 0 19px;
+}
+.image_container{
+    position: relative;
+}
+/* #root {
+    height: 100%;
+  } */
+
+  
+
+  

@@ -1,0 +1,34 @@
+{
+    "albums":[
+        {
+            "id":0,
+            "name":"Name Album",
+            "publishedDate":"",
+            "imageSrc":"../../public/assets/img/albums/01.png"
+        },
+        {
+            "id":1,
+            "name":"Name Album",
+            "publishedDate":"",
+            "imageSrc":""
+        },
+        {
+            "id":2,
+            "name":"Name Album",
+            "publishedDate":"",
+            "imageSrc":""
+        },
+        {
+            "id":3,
+            "name":"Name Album",
+            "publishedDate":"",
+            "imageSrc":""
+        },
+        {
+            "id":4,
+            "name":"Name Album",
+            "publishedDate":"",
+            "imageSrc":""
+        }
+    ]
+}
