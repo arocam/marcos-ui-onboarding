@@ -15,6 +15,8 @@ import image14 from '../../public/assets/img/gallery/14.png'
 import image15 from '../../public/assets/img/gallery/15.png'
 import Image from 'next/image'
 import styles from './gallery.module.css'
+import { GalleryColumn } from './gallery-column'
+import { GalleryImage } from './gallery-image'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -22,12 +24,23 @@ const Gallery = () =>{
 
     gsap.registerPlugin(ScrollTrigger);
     
-
+    const columns = [
+        [image1, image2, image3], [image4, image5, image6], [image7, image8, image9], [image10, image11, image12], [image13, image14, image15]
+    ]
 
     return(
         <div className={styles.gallery_bg}>
             <div className={styles.gallery_container}>
-                <div className={styles.gallery_column}>
+                {columns.map(col =>
+                        <GalleryColumn>
+                            {col.map(image =>
+                                    <GalleryImage>
+                                        <Image src={image}></Image>
+                                    </GalleryImage>
+                                )}
+                        </GalleryColumn>
+                    )}
+                {/* <div className={styles.gallery_column}>
                     <div className={styles.gallery_image}><Image src={image1}></Image></div>
                     <div className={styles.gallery_image}><Image src={image2}></Image></div>
                     <div className={styles.gallery_image}><Image src={image3}></Image></div>
@@ -51,7 +64,7 @@ const Gallery = () =>{
                     <div className={styles.gallery_image}><Image src={image13}></Image></div>
                     <div className={styles.gallery_image}><Image src={image14}></Image></div>
                     <div className={styles.gallery_image}><Image src={image15}></Image></div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

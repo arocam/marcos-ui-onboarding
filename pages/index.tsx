@@ -23,7 +23,7 @@ const Home: NextPage = () => {
 
       <Gallery></Gallery>
 
-  
+
       <div className={styles.slider_bg}>
         <Slider></Slider>
       </div>
