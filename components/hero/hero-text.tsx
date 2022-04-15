@@ -1,11 +1,12 @@
 import styles from './hero.module.css'
+import { EnjoyH1 } from '../global/enjoy-h1';
 
 const HeroText = () =>{
     return(
         <div className={styles.hero_text__container}>
             <div className={styles.hero_text}>
                 {/* Disfruta de la mejor musica */}
-                <h1 className={styles.title}>Disfruta de la <br/><span className={styles.c800}> mejor musica</span></h1>
+                <EnjoyH1></EnjoyH1>
             
                 {/* Accede a tu cuenta para guardar tus albumes favoritos */}
                 <p className={styles.paragraph}>Accede a tu cuenta para guardar tus <br/> álbumes favoritos</p>

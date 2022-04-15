@@ -99,18 +99,13 @@
     
 }
 /* ESTILOS DE TEXTO */
-.title{
-  font-size: 40px;
-  color: #fff;
-}
+
 .paragraph,
 .link_desc{
   font-size: 16px;
   color: #fff;
 }
-.c800{
-  color: #D6F379;
-}
+
 .link_container{
   display: flex;
   width: 120px;
@@ -123,19 +118,4 @@
 .link_vector{
   position: relative;
   top: 1px;
-}
-@media (min-width: 600px){
-    .title{
-      font-size: 64px;
-    }
-}
-@media (min-width: 992px){
-  .title{
-    font-size: 60px;
-  }
-}
-@media (min-width: 1200px){
-  .title{
-    font-size: 64px;
-  }
 }
