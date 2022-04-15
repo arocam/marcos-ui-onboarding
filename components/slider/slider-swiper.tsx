@@ -1,5 +1,6 @@
 //COMPONENTS
 import Image from "next/image";
+import {AlbumImage }from './album-image'
 // SWIPER IMPORTS
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -21,41 +22,74 @@ const SliderSwiper = () =>{
         <div className={styles.slider_container}>
             <Swiper
             slidesPerView={3}
-            spaceBetween={30}
+            spaceBetween={0}
             centeredSlides={true}
-            pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper">
-                        
+            pagination={{clickable: true,}}
+            modules={[Pagination]}
+            className="mySwiper">
+
+                <SwiperSlide>
+                    <div className={styles.swiper_content}>
+                        <div className={`${styles.slide_card} slide-card`}>
+                            <div className={styles.image_container}>
+                                <AlbumImage></AlbumImage>
+                            </div>
+                            <h3>Album name</h3>
+                            <p>Publicado: </p>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className={styles.swiper_content}>
+                        <div className={`${styles.slide_card} slide-card`}>
+                            <div className={styles.image_container}>
+                                <AlbumImage></AlbumImage>
+                            </div>
+                            <h3>Album name</h3>
+                            <p>Publicado: </p>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className={styles.swiper_content}>
+                        <div className={`${styles.slide_card} slide-card`}>
+                            <div className={styles.image_container}>
+                                <AlbumImage></AlbumImage>
+                            </div>
+                            <h3>Album name</h3>
+                            <p>Publicado: </p>
+                        </div>
+                    </div>
+                </SwiperSlide>
+
+                {/* <SwiperSlide>
+                    <div className={`${styles.slide_card} slide-card`}>
+                        <div className={styles.image_container}>
+                            <AlbumImage></AlbumImage>
+                        </div>
+                        <h3>Album name</h3>
+                        <p>Publicado: </p>
+                    </div>
+                </SwiperSlide>
                 <SwiperSlide>
                     <div className={`${styles.slide_card} slide-card`}>
                         <div className={styles.image_container}>
-                            <Image src={album1}></Image>
-                        </div>  
-                    </div>
-                </SwiperSlide>
-                {/* <SwiperSlide>
-                    <div className="slide-card">
-                        <Image src={album2}></Image>
+                            <AlbumImage></AlbumImage>
+                        </div>
+                        <h3>Album name</h3>
+                        <p>Publicado: </p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="slide-card">
-                        <Image src={album3}></Image>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide-card">
-                        <Image src={album4}></Image>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide-card">
-                        <Image src={album5}></Image>
+                    <div className={`${styles.slide_card} slide-card`}>
+                        <div className={styles.image_container}>
+                            <AlbumImage></AlbumImage>
+                        </div>
+                        <h3>Album name</h3>
+                        <p>Publicado: </p>
                     </div>
                 </SwiperSlide> */}
+                
             </Swiper>
         </div> 
     )

@@ -10,7 +10,6 @@ export const GalleryImage = styled.div`
             max-width: 302px;
     }
     .gallery-image{
-        border: 3px solid red;
         border-radius: 24px;
     }
 `

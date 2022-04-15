@@ -100,8 +100,8 @@ const Gallery = () =>{
                         </GalleryImage>
                     )}
                 </GalleryColumn>
-                
-                {/* SEPARANDO CADA COLUMNA */}
+
+                {/* - - - SEPARANDO CADA COLUMNA - - - */}
                 {/* {columns.map((col, index: number) =>
                         <GalleryColumn ref={`column${index}`}>
                             {col.map((image, index: number) =>
@@ -113,7 +113,7 @@ const Gallery = () =>{
                         </GalleryColumn>
                     )} */}
 
-                    {/* SEPARANDO CADA IMAGEN */}
+                    {/* - - - SEPARANDO CADA IMAGEN - - - */}
                 {/* <div className={styles.gallery_column}>
                     <div className={styles.gallery_image}><Image src={image1}></Image></div>
                     <div className={styles.gallery_image}><Image src={image2}></Image></div>
