@@ -4,8 +4,10 @@ import SliderSwiper from './slider-swiper';
 const Slider = () => {
     return(
         <div className={styles.slider_bg}>
-            <h2>Los más escuchados</h2>
-            <p>Disfruta de tu musica a un solo click y descubre que discos has guardado dentro de mis álbumes</p>
+            <div className={styles.title}>
+                <h2>Los más escuchados</h2>
+                <p>Disfruta de tu musica a un solo click y descubre que discos has guardado dentro de mis álbumes</p>
+            </div>
             <SliderSwiper></SliderSwiper>
         </div>
     )
