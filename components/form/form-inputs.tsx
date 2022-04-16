@@ -1,4 +1,5 @@
 import styles from './form.module.css'
+import Link from 'next/link'
 
 export const FormInputs = () =>{
     return(
@@ -13,6 +14,9 @@ export const FormInputs = () =>{
             </select>
             <textarea name="" id="" className={styles.textarea}></textarea>
             <input type="submit" />
+            <div className={styles.terms_cond}>
+                <input type="checkbox" className={styles.terms_input}/><p>Acepto las </p><Link href='asd'>condiciones legales</Link>
+            </div>
         </div>
     )
 }
