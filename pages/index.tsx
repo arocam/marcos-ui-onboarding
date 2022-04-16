@@ -5,6 +5,7 @@ import Gallery from '../components/gallery/gallery'
 import Header from '../components/header/header'
 import Hero from '../components/hero/hero'
 import Slider from '../components/slider/slider'
+import { Form } from '../components/form/form'
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
 
       <Slider></Slider>
 
+      <Form></Form>
     </div>
   )
 }

@@ -44,9 +44,7 @@ b{
   color: transparent;
   user-select: none;
 }
-.swiper-slide-next{
-  z-index: -2;
-}
+
 .swiper-slide-active .slide-card{
   background-color: #D6F379;
   width: 322px;
@@ -81,4 +79,11 @@ b{
 .swiper-slide-active p{
   font-size: 16px;
   margin-top: 24px;
+}
+.swiper-slide-active{
+  z-index: 10;
+}
+.swiper-slide-prev,
+.swiper-slide-next{
+  z-index: 5;
 }
