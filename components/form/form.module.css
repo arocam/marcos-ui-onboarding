@@ -1,31 +1,120 @@
 .form_bg{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
-    max-height: 1000px;
+    /* background-color: purple; */
+}
+@media (min-width: 992px){
+    .form_bg{
+        padding-top: 100px;
+    }
 }
 .form_container{
     width: 90%;
+    height: 100%;
     margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    /* background-color: pink; */
 }
+@media (min-width: 992px){
+    .form_container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+}
+.red{
+    /* background-color: red; */
+    height: 100%;
+    width: 100%;
+}
+.blue{
+    /* background-color: blue; */
+    height: 100%;
+    width: 100%;
+}
+
+
+/*TEXT*/
+.form_text_container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media (min-width: 992px){
+    .form_text_container{
+        justify-content: flex-start;
+    }
+}
+.paragraph{
+    color: #fff;
+    font-size: 24px;
+    margin-top: 28px;
+    max-width: 540px;
+}
+
+/*INPUTS*/
+
 .inputs_container{
     display: flex;
     flex-direction: column;
 }
-.inputs_container input,
-.inputs_container select,
-.inputs_container textarea{
+.form_input{
     width: 100%;
     max-width: 492px;
-}
-.textarea{
-    resize: none;
-    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #fff;
 }
 
-/* .terms_cond{
-    display: flex;
-    width: 100%;
+.option{
+    background-color: #222222;
 }
-.terms_input{
-    display: inline-block;
-} */
+.option__false{
+    color: #bbb;
+}
+.option__true{
+    color: #fff;
+}
+
+.textarea{
+    resize: none;
+    height: 100px;
+}
+.form_input:focus{
+    border-bottom: 1px solid #fff;
+}
+.terms_cond{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+.accept_cond{
+    display: inline;
+    color: rgba(255, 255, 255, 0.8);
+}
+.link_cond{
+    display: inline;
+    text-decoration: underline;
+}
+.checkbox{
+    margin: 10px;
+}
+.form_input_submit{
+    font-size: 24px;
+    width: 80px;
+    margin-top: 91px;
+}
+.form_input_submit:hover{
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+}
+
+
+/*TEST*/
+
