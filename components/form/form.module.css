@@ -69,14 +69,17 @@
     outline: none;
     font-size: 24px;
     margin-bottom: 40px;
+    /* color: #767676; */
     color: #fff;
 }
-
+.select_input{
+    color: #767676;
+}
 .option{
     background-color: #222222;
 }
 .option__false{
-    color: #bbb;
+    color: #888;
 }
 .option__true{
     color: #fff;

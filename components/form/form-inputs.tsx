@@ -1,21 +1,35 @@
 import styles from './form.module.css'
 import Link from 'next/link'
+import { useEffect, useRef } from 'react'
 
 export const FormInputs = () =>{
+    const expressions = {
+        usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+        password: /^.{4,12}$/, // 4 a 12 digitos.
+        correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+    }
+    const nameInput = useRef();
+    const emailInput = useRef();
+    const reasonInput = useRef();
+    const descriptionInput = useRef();
+    const conditionsInput = useRef();
+    
     return(
         <div className={styles.form}>
             <form className={styles.inputs_container}>
-                <input className={styles.form_input} type="text" placeholder="Nombre"/>
-                <input className={styles.form_input} type="email" placeholder="Email"/>
-                <select className={styles.form_input} name="" id="">
+                <input className={styles.form_input} type="text" ref={nameInput} placeholder="Nombre"/>
+                <input className={styles.form_input} type="email" ref={emailInput} placeholder="Email"/>
+                <select className={`${styles.form_input} ${styles.select_input}`} ref={reasonInput} name="" id="">
                     <option className={`${styles.option__false} ${styles.option}`} value="" disabled selected>Razón</option>
                     <option className={`${styles.option__true} ${styles.option}`} value="">Colaboración</option>
                     <option className={`${styles.option__true} ${styles.option}`} value="">Incidencia</option>
                     <option className={`${styles.option__true} ${styles.option}`} value="">Otros</option>
                 </select>
-                <textarea className={`${styles.form_input} ${styles.textarea}`} placeholder="Descripción"></textarea>
+                <textarea className={`${styles.form_input} ${styles.textarea}`} ref={descriptionInput} placeholder="Descripción"></textarea>
                 <div className={styles.terms_cond}>
-                    <input className={styles.checkbox} type="checkbox" /><p className={styles.accept_cond}>Acepto las <span className={styles.link_cond}><Link  href='https://www.spotify.com/es/legal/live-terms/'> condiciones legales</Link></span></p>
+                    <input ref={conditionsInput} className={styles.checkbox} type="checkbox" /><p className={styles.accept_cond}>Acepto las <span className={styles.link_cond}><Link  href='https://www.spotify.com/es/legal/live-terms/'> condiciones legales</Link></span></p>
                 </div>
                 <input className={`${styles.form_input} ${styles.form_input_submit}`} type="submit" />
             </form>
