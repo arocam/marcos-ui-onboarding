@@ -13,7 +13,7 @@
     height: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr 2fr;
     /* background-color: pink; */
 }
 @media (min-width: 992px){

@@ -10,7 +10,7 @@ export const FormInputs = () =>{
     const checkName = () =>{
         let inputName = nameInput;
         let errorNameMessage = nameErrorMessageTag;
-        let nameAllowedCharacters = /^[A-Za-z]+$/;
+        let nameAllowedCharacters = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
         if(inputName.current.value.length > 1 && inputName.current.value.match(nameAllowedCharacters)){
             inputName.current.style.borderColor = "#FFFFFF";
             inputName.current.style.color = "#FFFFFF";
@@ -159,7 +159,7 @@ export const FormInputs = () =>{
                 </div>
                 {/* Submit */}
                 <div className={`${styles.input_container} ${styles.input_submit_container}`}>
-                    <input className={`${styles.form_input} ${styles.form_input_submit}`} type="submit" onClick={checkAll} />
+                    <button className={`${styles.form_input} ${styles.form_input_submit}`} type="submit" onClick={checkAll}>Enviar</button>
                 </div>
             </form>
         </div>
