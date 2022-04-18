@@ -6,7 +6,7 @@ export const FormInputs = () =>{
     //NAME CHECK
     const nameInput = useRef() as any;
     const nameErrorMessageTag = useRef() as any;
-    let nameError = false;
+    let nameError = true;
     const checkName = () =>{
         let inputName = nameInput;
         let errorNameMessage = nameErrorMessageTag;
@@ -23,9 +23,26 @@ export const FormInputs = () =>{
             nameError = true;
         }
     }
-
     //EMAIL CHECK
-
+    const emailInput = useRef() as any;
+    const emailErrorMessageTag = useRef() as any;
+    let emailError = true;
+    const checkEmail = () =>{
+        let inpurEmail = emailInput;
+        let errorEmailMessage =  emailErrorMessageTag;
+        const emailAllowedCharacters = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+        if( inpurEmail.current.value[0] != "." && inpurEmail.current.value.match(emailAllowedCharacters)){
+            inpurEmail.current.style.borderColor = "#FFFFFF";
+            inpurEmail.current.style.color = "#FFFFFF";
+            errorEmailMessage.current.style.display = "none"
+            emailError = false;
+        }else{
+            inpurEmail.current.style.borderColor = "#FF7777";
+            inpurEmail.current.style.color = "#FF7777";
+            errorEmailMessage.current.style.display = "block"
+            emailError = true;
+        }
+    }
 
 
     return(
@@ -39,7 +56,8 @@ export const FormInputs = () =>{
                 
                 {/* Email */}
                 <div className={`${styles.input_container} ${styles.input_email_container}`}>
-                    <input className={styles.form_input} type="email" placeholder="Email"/>
+                    <input ref={emailInput} onKeyUp={checkEmail} className={styles.form_input} type="email" placeholder="Email"/>
+                    <div ref={emailErrorMessageTag} className={styles.error}>Por favor, introduzca un formato de Email válido.</div>
                 </div>
 
                 {/* Razon */}
