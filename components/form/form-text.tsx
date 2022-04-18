@@ -5,7 +5,7 @@ export const FormText = () =>{
     return(
         <div className={styles.form_text_container}>
             <EnjoyH1></EnjoyH1>
-            <p className={styles.paragraph}>Escríbenod en el siguiente formulario y un asesor se pondrá en contacto contigo</p>
+            <p className={styles.paragraph}>Escríbenos en el siguiente formulario y un asesor se pondrá en contacto contigo</p>
         </div>
     )
 }

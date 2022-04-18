@@ -48,10 +48,11 @@
     }
 }
 .paragraph{
-    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 24px;
     margin-top: 28px;
     max-width: 540px;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 /*INPUTS*/
