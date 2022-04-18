@@ -36,15 +36,11 @@
   width: 100%;
   /* background-color: red; */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+
 }
 .arrow_vector{
   width: 222px;
-}
-@media (min-width: 600px){
-    .arrow_vector_container{
-      justify-content: flex-start;
-    }
 }
 @media (min-width: 992px){
   .arrow_vector_container{
@@ -59,12 +55,8 @@
     width: 464px;
   }
 }
-
-
-
 /*HERO TEXT STYLES*/
 /* ESTILOS DE CONTENEDORES */
-
 .hero_text__container{
   /* background-color: blue; */
   height: 100%;
@@ -94,9 +86,6 @@
       height: 50vh;
       max-height: 490px;
     }
-}
-@media (min-width: 1200px){
-    
 }
 /* ESTILOS DE TEXTO */
 .paragraph{
