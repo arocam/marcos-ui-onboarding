@@ -50,7 +50,7 @@ const Gallery = () =>{
     });
 
     const columns = [
-        [image1, image2, image3,image4], [image4, image5, image6, image7], [image7, image8, image9, image10], [image10, image11, image12, image13], [image13, image14, image15, image1],[image3, image5, image9, image2]
+        [image1, image2, image3,image4], [image4, image5, image6, image7], [image7, image8, image9, image10, image1], [image10, image11, image12, image13], [image13, image14, image15, image1],[image3, image5, image9, image2]
     ]
 
     return(
