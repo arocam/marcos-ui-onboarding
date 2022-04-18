@@ -72,9 +72,13 @@
     border: none;
     outline: none;
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom:7px;
+
     /* color: #767676; */
     color: #fff;
+}
+.input_container{
+    margin-bottom: 40px;
 }
 .select_input{
     color: #767676;
@@ -113,6 +117,9 @@
 .checkbox{
     margin: 10px;
 }
+.input_submit_container{
+    display: flex;
+}
 .form_input_submit{
     font-size: 24px;
     width: 80px;
@@ -123,7 +130,7 @@
     cursor: pointer;
     border-bottom: 1px solid #fff;
 }
-
-
-/*TEST*/
-
+.error{
+    color: #FF7777;
+    display: none;
+}
