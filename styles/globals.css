@@ -42,6 +42,7 @@ b{
   font-size: 0;
   color: transparent;
   user-select: none;
+  transition: font-size .5s ease; /*Achica la letra*/
 }
 
 .swiper-slide-active .slide-card{
@@ -49,6 +50,8 @@ b{
   width: 322px;
   height: 401px;
   border-radius: 24px;
+  transition: background-color .5s ease-in-out;
+
 }
 @media (min-width: 600px){
   .swiper-slide-active .slide-card{
