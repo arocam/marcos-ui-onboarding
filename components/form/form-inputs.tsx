@@ -19,18 +19,24 @@ export const FormInputs = () =>{
     return(
         <div className={styles.form}>
             <form className={styles.inputs_container}>
+                {/* Nombre */}
                 <input className={styles.form_input} type="text" ref={nameInput} placeholder="Nombre"/>
+                {/* Email */}
                 <input className={styles.form_input} type="email" ref={emailInput} placeholder="Email"/>
+                {/* Razon */}
                 <select className={`${styles.form_input} ${styles.select_input}`} ref={reasonInput} name="" id="">
                     <option className={`${styles.option__false} ${styles.option}`} value="" disabled selected>Razón</option>
                     <option className={`${styles.option__true} ${styles.option}`} value="">Colaboración</option>
                     <option className={`${styles.option__true} ${styles.option}`} value="">Incidencia</option>
                     <option className={`${styles.option__true} ${styles.option}`} value="">Otros</option>
                 </select>
+                {/* Descripcion */}
                 <textarea className={`${styles.form_input} ${styles.textarea}`} ref={descriptionInput} placeholder="Descripción"></textarea>
+                {/* Terminos y condiciones */}
                 <div className={styles.terms_cond}>
                     <input ref={conditionsInput} className={styles.checkbox} type="checkbox" /><p className={styles.accept_cond}>Acepto las <span className={styles.link_cond}><Link  href='https://www.spotify.com/es/legal/live-terms/'> condiciones legales</Link></span></p>
                 </div>
+                {/* Submit */}
                 <input className={`${styles.form_input} ${styles.form_input_submit}`} type="submit" />
             </form>
         </div>

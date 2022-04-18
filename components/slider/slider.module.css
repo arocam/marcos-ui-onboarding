@@ -15,27 +15,34 @@
     justify-content: space-evenly;
     background-color: #222222;
 }
-.title h2,
-.title p{
+.title_h2,
+.title_p{
     color: #fff;
     text-align: center;
     margin: 0 auto;
 }
-.title h2{
+.title_h2{
     width: 50%;
     font-size: 40px;
     margin-bottom: 24px;
 }
-.title p{
+.title_p{
     width: 80%;
     max-width: 460px;
     font-size: 16px;
+    line-height: 32px;
+}
+@media (min-width: 600px){
+    .title_h2{
+        font-size: 60px
+    }
 }
 .slider_container{
     width: 100%;
 }
 .slide_card{
     padding: 24px 19px 0 19px;
+    font-weight: 600;
 }
 .image_container{
     width: 100%;

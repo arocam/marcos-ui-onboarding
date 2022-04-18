@@ -99,7 +99,10 @@
     
 }
 /* ESTILOS DE TEXTO */
-
+.paragraph{
+  line-height: 20px;
+  font-weight: 300;
+}
 .paragraph,
 .link_desc{
   font-size: 16px;
