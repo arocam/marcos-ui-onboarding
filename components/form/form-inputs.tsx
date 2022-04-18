@@ -1,52 +1,21 @@
 import styles from './form.module.css'
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
+import { Input } from './input'
+import { Hola } from '../../public/assets/functions/functions'
 
 export const FormInputs = () =>{
     //NAME CHECK
     const nameInput = useRef() as any;
     const nameErrorMessageTag = useRef() as any;
-    let nameError = true;
-    const checkName = () =>{
-        let inputName = nameInput;
-        let errorNameMessage = nameErrorMessageTag;
-        let nameAllowedCharacters = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
-        if(inputName.current.value.length > 1 && inputName.current.value.match(nameAllowedCharacters)){
-            inputName.current.style.borderColor = "#FFFFFF";
-            inputName.current.style.color = "#FFFFFF";
-            errorNameMessage.current.style.display = "none"
-            return true;
-        }else{
-            inputName.current.style.borderColor = "#FF7777";
-            inputName.current.style.color = "#FF7777";
-            errorNameMessage.current.style.display = "block"
-            return false;
-        }
-    }
+    const checkName = () =>{Hola.checkName(nameInput.current, nameErrorMessageTag.current)}
     //EMAIL CHECK
     const emailInput = useRef() as any;
     const emailErrorMessageTag = useRef() as any;
-    let emailError = true;
-    const checkEmail = () =>{
-        let inputEmail = emailInput;
-        let errorEmailMessage =  emailErrorMessageTag;
-        const emailAllowedCharacters = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-        if( inputEmail.current.value[0] != "." && inputEmail.current.value.match(emailAllowedCharacters)){
-            inputEmail.current.style.borderColor = "#FFFFFF";
-            inputEmail.current.style.color = "#FFFFFF";
-            errorEmailMessage.current.style.display = "none"
-            return true;
-        }else{
-            inputEmail.current.style.borderColor = "#FF7777";
-            inputEmail.current.style.color = "#FF7777";
-            errorEmailMessage.current.style.display = "block"
-            return false;
-        }
-    }
+    const checkEmail = () =>{Hola.checkEmail(emailInput.current, emailErrorMessageTag.current)}
     //READON CHECK
     const reasonInput = useRef() as any;
     const reasonErrorMessageTag = useRef() as any;
-    let reasonError = true;
     const checkReason = () => {
         let inputReason = reasonInput;
         let errorReasonMessage =  reasonErrorMessageTag;
@@ -110,16 +79,16 @@ export const FormInputs = () =>{
         checkDescription();
         checkTerms();
 
-        if(checkName()&&
-        checkEmail()&&
-        checkReason()&&
-        checkDescription()&&
-        checkTerms()){
-            alert('Mensaje enviado! Pronto alguien de nuestro equipo se pondrá en contacto contigo!');
-            setTimeout(()=>{
-                location.reload();
-            }, 500)
-        }
+        // if(checkName()&&
+        // checkEmail()&&
+        // checkReason()&&
+        // checkDescription()&&
+        // checkTerms()){
+        //     alert('Mensaje enviado! Pronto alguien de nuestro equipo se pondrá en contacto contigo!');
+        //     setTimeout(()=>{
+        //         location.reload();
+        //     }, 500)
+        // }
     }
 
     return(
@@ -127,13 +96,13 @@ export const FormInputs = () =>{
             <form className={styles.inputs_container} onSubmit={e => e.preventDefault()}>
                 {/* Nombre */}
                 <div className={`${styles.input_container} ${styles.input_name_container}`}>
-                    <input ref={nameInput} onKeyUp={checkName} className={styles.form_input} type="text" placeholder="Nombre"/>
+                    <Input ref={nameInput} onKeyUp={checkName} type="text" placeholder="Nombre"></Input>
                     <div ref={nameErrorMessageTag} className={styles.error}>El nombre debe tener al menos 2 caracteres y no debe contener símbolos especiales o números.</div>
                 </div>
                 
                 {/* Email */}
                 <div className={`${styles.input_container} ${styles.input_email_container}`}>
-                    <input ref={emailInput} onKeyUp={checkEmail} className={styles.form_input} type="email" placeholder="Email"/>
+                    <Input ref={emailInput} onKeyUp={checkEmail} type="email" placeholder="Email"></Input>
                     <div ref={emailErrorMessageTag} className={styles.error}>Por favor, introduzca un formato de Email válido.</div>
                 </div>
 
