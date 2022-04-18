@@ -16,6 +16,7 @@ export const FormInputs = () =>{
     const descriptionInput = useRef();
     const conditionsInput = useRef();
     
+
     return(
         <div className={styles.form}>
             <form className={styles.inputs_container}>

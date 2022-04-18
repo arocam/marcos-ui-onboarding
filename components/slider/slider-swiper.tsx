@@ -24,8 +24,8 @@ const SliderSwiper = () =>{
             modules={[Pagination]}
             className="mySwiper">
 
-                {albums.map(alb=>
-                <SwiperSlide>
+                {albums.map((alb, index)=>
+                <SwiperSlide key={index}>
                 <div className={styles.swiper_content}>
                     <div className={`${styles.slide_card} slide-card`}>
                         <div className={styles.image_container}>

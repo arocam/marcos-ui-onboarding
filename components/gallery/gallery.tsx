@@ -47,7 +47,7 @@ const Gallery = () =>{
         tlColumn4.to(column4.current,{y: '200'})
         tlColumn5.to(column5.current,{y: '-200'})
         tlColumn6.to(column6.current,{y: '200'})
-    }, []);
+    });
 
     const columns = [
         [image1, image2, image3,image4], [image4, image5, image6, image7], [image7, image8, image9, image10], [image10, image11, image12, image13], [image13, image14, image15, image1],[image3, image5, image9, image2]
@@ -55,47 +55,45 @@ const Gallery = () =>{
 
     return(
         <div className={styles.gallery_bg}>
-            <div className={styles.gallery_container}>
-                {/* SIN SEPARAR COLUMNAS (para usar el ref) */}
-                
+            <div className={styles.gallery_container}>                
                 <GalleryColumn className="c1" ref={column1}>
-                    {columns[0].map(image =>
-                        <GalleryImage>
+                    {columns[0].map((image,index) =>
+                        <GalleryImage key={index}>
                             <Image src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c2" ref={column2}>
-                    {columns[1].map(image =>
-                        <GalleryImage>
+                    {columns[1].map((image,index) =>
+                        <GalleryImage key={index}>
                             <Image src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c3" ref={column3}>
-                    {columns[2].map(image =>
-                        <GalleryImage>
+                    {columns[2].map((image,index) =>
+                        <GalleryImage key={index}>
                             <Image src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c4" ref={column4}>
-                    {columns[3].map(image =>
-                        <GalleryImage>
+                    {columns[3].map((image,index) =>
+                        <GalleryImage key={index}>
                             <Image src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c5" ref={column5}>
-                    {columns[4].map(image =>
-                        <GalleryImage>
+                    {columns[4].map((image,index) =>
+                        <GalleryImage key={index}>
                             <Image src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c6" ref={column6}>
-                    {columns[4].map(image =>
-                        <GalleryImage>
+                    {columns[4].map((image,index) =>
+                        <GalleryImage key={index}>
                             <Image src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
@@ -112,33 +110,6 @@ const Gallery = () =>{
                                 )}
                         </GalleryColumn>
                     )} */}
-
-                    {/* - - - SEPARANDO CADA IMAGEN - - - */}
-                {/* <div className={styles.gallery_column}>
-                    <div className={styles.gallery_image}><Image src={image1}></Image></div>
-                    <div className={styles.gallery_image}><Image src={image2}></Image></div>
-                    <div className={styles.gallery_image}><Image src={image3}></Image></div>
-                </div>
-                <div className={styles.gallery_column}>
-                    <div className={styles.gallery_image}><Image src={image4}></Image></div>
-                    <div className={styles.gallery_image}><Image src={image5}></Image></div>
-                    <div className={styles.gallery_image}><Image src={image6}></Image></div>
-                </div>
-                <div className={styles.gallery_column}>
-                    <div className={styles.gallery_image}><Image src={image7}></Image></div>
-                    <div className={styles.gallery_image}><Image src={image8}></Image></div>
-                    <div className={styles.gallery_image}><Image src={image9}></Image></div>
-                </div>
-                <div className={styles.gallery_column}>
-                    <div className={styles.gallery_image}><Image src={image10}></Image></div>
-                    <div className={styles.gallery_image}><Image src={image11}></Image></div>
-                    <div className={styles.gallery_image}><Image src={image12}></Image></div>
-                </div>
-                <div className={styles.gallery_column}>
-                    <div className={styles.gallery_image}><Image src={image13}></Image></div>
-                    <div className={styles.gallery_image}><Image src={image14}></Image></div>
-                    <div className={styles.gallery_image}><Image src={image15}></Image></div>
-                </div> */}
             </div>
         </div>
     )
