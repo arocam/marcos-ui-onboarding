@@ -3,13 +3,15 @@ import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 
 export const FormInputs = () =>{
-    const nameInput = useRef();
-    const nameErrorMessageTag = useRef();
+    //NAME CHECK
+    const nameInput = useRef() as any;
+    const nameErrorMessageTag = useRef() as any;
     let nameError = false;
-    const checkNameLength = () =>{
+    const checkName = () =>{
         let inputName = nameInput;
         let errorNameMessage = nameErrorMessageTag;
-        if(inputName.current.value.length > 1){
+        let nameAllowedCharacters = /^[A-Za-z]+$/;
+        if(inputName.current.value.length > 1 && inputName.current.value.match(nameAllowedCharacters)){
             inputName.current.style.borderColor = "#FFFFFF";
             inputName.current.style.color = "#FFFFFF";
             errorNameMessage.current.style.display = "none"
@@ -22,6 +24,8 @@ export const FormInputs = () =>{
         }
     }
 
+    //EMAIL CHECK
+
 
 
     return(
@@ -29,8 +33,8 @@ export const FormInputs = () =>{
             <form className={styles.inputs_container} onSubmit={e => e.preventDefault()}>
                 {/* Nombre */}
                 <div className={`${styles.input_container} ${styles.input_name_container}`}>
-                    <input ref={nameInput} onKeyUp={checkNameLength} className={styles.form_input} type="text" placeholder="Nombre"/>
-                    <div ref={nameErrorMessageTag} className={styles.error}>El nombre debe tener al menos 2 caracteres</div>
+                    <input ref={nameInput} onKeyUp={checkName} className={styles.form_input} type="text" placeholder="Nombre"/>
+                    <div ref={nameErrorMessageTag} className={styles.error}>El nombre debe tener al menos 2 caracteres y no debe contener símbolos especiales o números.</div>
                 </div>
                 
                 {/* Email */}
