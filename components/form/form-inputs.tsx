@@ -43,6 +43,25 @@ export const FormInputs = () =>{
             emailError = true;
         }
     }
+    //READON CHECK
+    const reasonInput = useRef() as any;
+    const reasonErrorMessageTag = useRef() as any;
+    let reasonError = true;
+    const checkReason = () => {
+        let inputReason = reasonInput;
+        let errorReasonMessage =  reasonErrorMessageTag;
+        if( inputReason.current.value != "none" ){
+            inputReason.current.style.borderColor = "#FFFFFF";
+            inputReason.current.style.color = "#FFFFFF";
+            errorReasonMessage.current.style.display = "none"
+            reasonError = false;
+        }else{
+            inputReason.current.style.borderColor = "#FF7777";
+            inputReason.current.style.color = "#FF7777";
+            errorReasonMessage.current.style.display = "block"
+            reasonError = true;
+        }
+    }
     //DESCRIPTION CHECK
     const descriptionInput = useRef() as any;
     const descriptionErrorMessageTag = useRef() as any;
@@ -63,6 +82,9 @@ export const FormInputs = () =>{
         }
     }
 
+    //TERMS AND CONDITIONS CHECK
+
+
     return(
         <div className={styles.form}>
             <form className={styles.inputs_container} onSubmit={e => e.preventDefault()}>
@@ -80,12 +102,13 @@ export const FormInputs = () =>{
 
                 {/* Razon */}
                 <div className={`${styles.input_container} ${styles.input_reason_container}`}>
-                    <select className={`${styles.form_input} ${styles.select_input}`} name="" id="">
+                    <select ref={reasonInput} className={`${styles.form_input} ${styles.select_input}`} name="" id="">
                         <option className={`${styles.option__false} ${styles.option}`} value="none" disabled selected>Razón</option>
                         <option className={`${styles.option__true} ${styles.option}`} value="colaboration">Colaboración</option>
                         <option className={`${styles.option__true} ${styles.option}`} value="incidence">Incidencia</option>
                         <option className={`${styles.option__true} ${styles.option}`} value="others">Otros</option>
                     </select>
+                    <div ref={reasonErrorMessageTag} className={styles.error}>Debe seleccionar una razón.</div>
                 </div>
                 {/* Descripcion */}
                 <div className={`${styles.input_container} ${styles.input_description_container}`}>
