@@ -59,42 +59,42 @@ const Gallery = () =>{
                 <GalleryColumn className="c1" ref={column1}>
                     {columns[0].map((image,index) =>
                         <GalleryImage key={index}>
-                            <Image src={image} className="gallery-image"></Image>
+                            <Image alt="Gallery Img" src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c2" ref={column2}>
                     {columns[1].map((image,index) =>
                         <GalleryImage key={index}>
-                            <Image src={image} className="gallery-image"></Image>
+                            <Image alt="Gallery Img" src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c3" ref={column3}>
                     {columns[2].map((image,index) =>
                         <GalleryImage key={index}>
-                            <Image src={image} className="gallery-image"></Image>
+                            <Image alt="Gallery Img" src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c4" ref={column4}>
                     {columns[3].map((image,index) =>
                         <GalleryImage key={index}>
-                            <Image src={image} className="gallery-image"></Image>
+                            <Image alt="Gallery Img" src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c5" ref={column5}>
                     {columns[4].map((image,index) =>
                         <GalleryImage key={index}>
-                            <Image src={image} className="gallery-image"></Image>
+                            <Image alt="Gallery Img" src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
                 <GalleryColumn className="c6" ref={column6}>
                     {columns[4].map((image,index) =>
                         <GalleryImage key={index}>
-                            <Image src={image} className="gallery-image"></Image>
+                            <Image alt="Gallery Img" src={image} className="gallery-image"></Image>
                         </GalleryImage>
                     )}
                 </GalleryColumn>
