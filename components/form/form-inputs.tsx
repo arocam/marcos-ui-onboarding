@@ -28,22 +28,40 @@ export const FormInputs = () =>{
     const emailErrorMessageTag = useRef() as any;
     let emailError = true;
     const checkEmail = () =>{
-        let inpurEmail = emailInput;
+        let inputEmail = emailInput;
         let errorEmailMessage =  emailErrorMessageTag;
         const emailAllowedCharacters = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-        if( inpurEmail.current.value[0] != "." && inpurEmail.current.value.match(emailAllowedCharacters)){
-            inpurEmail.current.style.borderColor = "#FFFFFF";
-            inpurEmail.current.style.color = "#FFFFFF";
+        if( inputEmail.current.value[0] != "." && inputEmail.current.value.match(emailAllowedCharacters)){
+            inputEmail.current.style.borderColor = "#FFFFFF";
+            inputEmail.current.style.color = "#FFFFFF";
             errorEmailMessage.current.style.display = "none"
             emailError = false;
         }else{
-            inpurEmail.current.style.borderColor = "#FF7777";
-            inpurEmail.current.style.color = "#FF7777";
+            inputEmail.current.style.borderColor = "#FF7777";
+            inputEmail.current.style.color = "#FF7777";
             errorEmailMessage.current.style.display = "block"
             emailError = true;
         }
     }
-
+    //DESCRIPTION CHECK
+    const descriptionInput = useRef() as any;
+    const descriptionErrorMessageTag = useRef() as any;
+    let descriptionError =  true;
+    const checkDescription = () =>{
+        let inputDescription = descriptionInput;
+        let errorDescriptionMessage =  descriptionErrorMessageTag;
+        if(inputDescription.current.value.length > 0){
+            inputDescription.current.style.borderColor = "#FFFFFF";
+            inputDescription.current.style.color = "#FFFFFF";
+            errorDescriptionMessage.current.style.display = "none"
+            descriptionError = false;
+        }else{
+            inputDescription.current.style.borderColor = "#FF7777";
+            inputDescription.current.style.color = "#FF7777";
+            errorDescriptionMessage.current.style.display = "block"
+            descriptionError = true;
+        }
+    }
 
     return(
         <div className={styles.form}>
@@ -63,15 +81,16 @@ export const FormInputs = () =>{
                 {/* Razon */}
                 <div className={`${styles.input_container} ${styles.input_reason_container}`}>
                     <select className={`${styles.form_input} ${styles.select_input}`} name="" id="">
-                        <option className={`${styles.option__false} ${styles.option}`} value="" disabled selected>Razón</option>
-                        <option className={`${styles.option__true} ${styles.option}`} value="">Colaboración</option>
-                        <option className={`${styles.option__true} ${styles.option}`} value="">Incidencia</option>
-                        <option className={`${styles.option__true} ${styles.option}`} value="">Otros</option>
+                        <option className={`${styles.option__false} ${styles.option}`} value="none" disabled selected>Razón</option>
+                        <option className={`${styles.option__true} ${styles.option}`} value="colaboration">Colaboración</option>
+                        <option className={`${styles.option__true} ${styles.option}`} value="incidence">Incidencia</option>
+                        <option className={`${styles.option__true} ${styles.option}`} value="others">Otros</option>
                     </select>
                 </div>
                 {/* Descripcion */}
                 <div className={`${styles.input_container} ${styles.input_description_container}`}>
-                    <textarea className={`${styles.form_input} ${styles.textarea}`} placeholder="Descripción"></textarea>
+                    <textarea ref={descriptionInput}  onKeyUp={checkDescription} className={`${styles.form_input} ${styles.textarea}`} placeholder="Descripción"></textarea>
+                    <div ref={descriptionErrorMessageTag} className={styles.error}>Debe incluir una descripción.</div>
                 </div>
                 {/* Terminos y condiciones */}
                 <div className={styles.terms_cond}>
