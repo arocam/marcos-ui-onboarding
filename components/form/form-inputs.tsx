@@ -9,7 +9,7 @@ export const FormInputs = () =>{
     const checkNameLength = () =>{
         let inputName = nameInput;
         let errorNameMessage = nameErrorMessageTag;
-        if(inputName.current.value.length > 2){
+        if(inputName.current.value.length > 1){
             inputName.current.style.borderColor = "#FFFFFF";
             inputName.current.style.color = "#FFFFFF";
             errorNameMessage.current.style.display = "none"
@@ -22,7 +22,7 @@ export const FormInputs = () =>{
         }
     }
 
-    
+
 
     return(
         <div className={styles.form}>
@@ -30,7 +30,7 @@ export const FormInputs = () =>{
                 {/* Nombre */}
                 <div className={`${styles.input_container} ${styles.input_name_container}`}>
                     <input ref={nameInput} onKeyUp={checkNameLength} className={styles.form_input} type="text" placeholder="Nombre"/>
-                    <div ref={nameErrorMessageTag} className={styles.error}>El nombre debe tener al menos 3 caracteres</div>
+                    <div ref={nameErrorMessageTag} className={styles.error}>El nombre debe tener al menos 2 caracteres</div>
                 </div>
                 
                 {/* Email */}
