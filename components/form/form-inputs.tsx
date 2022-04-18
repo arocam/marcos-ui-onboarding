@@ -15,12 +15,12 @@ export const FormInputs = () =>{
             inputName.current.style.borderColor = "#FFFFFF";
             inputName.current.style.color = "#FFFFFF";
             errorNameMessage.current.style.display = "none"
-            nameError = false;
+            return true;
         }else{
             inputName.current.style.borderColor = "#FF7777";
             inputName.current.style.color = "#FF7777";
             errorNameMessage.current.style.display = "block"
-            nameError = true;
+            return false;
         }
     }
     //EMAIL CHECK
@@ -35,12 +35,12 @@ export const FormInputs = () =>{
             inputEmail.current.style.borderColor = "#FFFFFF";
             inputEmail.current.style.color = "#FFFFFF";
             errorEmailMessage.current.style.display = "none"
-            emailError = false;
+            return true;
         }else{
             inputEmail.current.style.borderColor = "#FF7777";
             inputEmail.current.style.color = "#FF7777";
             errorEmailMessage.current.style.display = "block"
-            emailError = true;
+            return false;
         }
     }
     //READON CHECK
@@ -54,12 +54,12 @@ export const FormInputs = () =>{
             inputReason.current.style.borderColor = "#FFFFFF";
             inputReason.current.style.color = "#FFFFFF";
             errorReasonMessage.current.style.display = "none"
-            reasonError = false;
+            return true;
         }else{
             inputReason.current.style.borderColor = "#FF7777";
             inputReason.current.style.color = "#FF7777";
             errorReasonMessage.current.style.display = "block"
-            reasonError = true;
+            return false;
         }
     }
     //DESCRIPTION CHECK
@@ -73,17 +73,54 @@ export const FormInputs = () =>{
             inputDescription.current.style.borderColor = "#FFFFFF";
             inputDescription.current.style.color = "#FFFFFF";
             errorDescriptionMessage.current.style.display = "none"
-            descriptionError = false;
+            return true;
         }else{
             inputDescription.current.style.borderColor = "#FF7777";
             inputDescription.current.style.color = "#FF7777";
             errorDescriptionMessage.current.style.display = "block"
-            descriptionError = true;
+            return false;
         }
     }
 
     //TERMS AND CONDITIONS CHECK
+    const termsInput = useRef() as any;
+    const termsErrorMessageTag = useRef() as any;
+    let termsError = true;
+    const checkTerms = () =>{
+        let inputTerms = termsInput;
+        let errorTermsMessage =  termsErrorMessageTag;
+        if(inputTerms.current.checked){
+            inputTerms.current.style.borderColor = "#FFFFFF";
+            inputTerms.current.style.color = "#FFFFFF";
+            errorTermsMessage.current.style.display = "none"
+            return true;
+        }else{
+            inputTerms.current.style.borderColor = "#FF7777";
+            inputTerms.current.style.color = "#FF7777";
+            errorTermsMessage.current.style.display = "block"
+            return false;
+        }
+    }
 
+    //CHECK ALL BEFORE SUBMIT
+    const checkAll = () =>{
+        checkName();
+        checkEmail();
+        checkReason();
+        checkDescription();
+        checkTerms();
+
+        if(checkName()&&
+        checkEmail()&&
+        checkReason()&&
+        checkDescription()&&
+        checkTerms()){
+            alert('Mensaje enviado! Pronto alguien de nuestro equipo se pondrá en contacto contigo!');
+            setTimeout(()=>{
+                location.reload();
+            }, 500)
+        }
+    }
 
     return(
         <div className={styles.form}>
@@ -102,7 +139,7 @@ export const FormInputs = () =>{
 
                 {/* Razon */}
                 <div className={`${styles.input_container} ${styles.input_reason_container}`}>
-                    <select ref={reasonInput} className={`${styles.form_input} ${styles.select_input}`} name="" id="">
+                    <select onChange={checkReason} ref={reasonInput} className={`${styles.form_input} ${styles.select_input}`} name="" id="">
                         <option className={`${styles.option__false} ${styles.option}`} value="none" disabled selected>Razón</option>
                         <option className={`${styles.option__true} ${styles.option}`} value="colaboration">Colaboración</option>
                         <option className={`${styles.option__true} ${styles.option}`} value="incidence">Incidencia</option>
@@ -117,11 +154,12 @@ export const FormInputs = () =>{
                 </div>
                 {/* Terminos y condiciones */}
                 <div className={styles.terms_cond}>
-                    <input className={styles.checkbox} type="checkbox" /><p className={styles.accept_cond}>Acepto las <span className={styles.link_cond}><Link  href='https://www.spotify.com/es/legal/live-terms/'> condiciones legales</Link></span></p>
+                    <div className={styles.terms_input_container}><input ref={termsInput} className={styles.checkbox} type="checkbox" /><p className={styles.accept_cond}>Acepto las <span className={styles.link_cond}><Link  href='https://www.spotify.com/es/legal/live-terms/'> condiciones legales</Link></span></p></div>
+                    <div ref={termsErrorMessageTag} className={styles.error}>Acepte las condiciones legales para continuar.</div>
                 </div>
                 {/* Submit */}
                 <div className={`${styles.input_container} ${styles.input_submit_container}`}>
-                    <input className={`${styles.form_input} ${styles.form_input_submit}`} type="submit" />
+                    <input className={`${styles.form_input} ${styles.form_input_submit}`} type="submit" onClick={checkAll} />
                 </div>
             </form>
         </div>
