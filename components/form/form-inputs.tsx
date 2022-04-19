@@ -3,132 +3,28 @@ import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import { Input } from './input'
 import { Hola } from '../../public/assets/functions/functions'
+import {ErrorMessage} from './error-message'
+import { InputName } from './name-input'
+import { InputEmail } from './email-input'
+import { InputReason } from './reason-input'
+import { InputDescription } from './description-input'
+import { InputConditions } from './conditions-input'
 
 export const FormInputs = () =>{
-    //NAME CHECK
-    const nameInput = useRef() as any;
-    const nameErrorMessageTag = useRef() as any;
-    const checkName = () =>{Hola.checkName(nameInput.current, nameErrorMessageTag.current)}
-    //EMAIL CHECK
-    const emailInput = useRef() as any;
-    const emailErrorMessageTag = useRef() as any;
-    const checkEmail = () =>{Hola.checkEmail(emailInput.current, emailErrorMessageTag.current)}
-    //READON CHECK
-    const reasonInput = useRef() as any;
-    const reasonErrorMessageTag = useRef() as any;
-    const checkReason = () => {
-        let inputReason = reasonInput;
-        let errorReasonMessage =  reasonErrorMessageTag;
-        if( inputReason.current.value != "none" ){
-            inputReason.current.style.borderColor = "#FFFFFF";
-            inputReason.current.style.color = "#FFFFFF";
-            errorReasonMessage.current.style.display = "none"
-            return true;
-        }else{
-            inputReason.current.style.borderColor = "#FF7777";
-            inputReason.current.style.color = "#FF7777";
-            errorReasonMessage.current.style.display = "block"
-            return false;
-        }
-    }
-    //DESCRIPTION CHECK
-    const descriptionInput = useRef() as any;
-    const descriptionErrorMessageTag = useRef() as any;
-    let descriptionError =  true;
-    const checkDescription = () =>{
-        let inputDescription = descriptionInput;
-        let errorDescriptionMessage =  descriptionErrorMessageTag;
-        if(inputDescription.current.value.length > 0){
-            inputDescription.current.style.borderColor = "#FFFFFF";
-            inputDescription.current.style.color = "#FFFFFF";
-            errorDescriptionMessage.current.style.display = "none"
-            return true;
-        }else{
-            inputDescription.current.style.borderColor = "#FF7777";
-            inputDescription.current.style.color = "#FF7777";
-            errorDescriptionMessage.current.style.display = "block"
-            return false;
-        }
-    }
-
-    //TERMS AND CONDITIONS CHECK
-    const termsInput = useRef() as any;
-    const termsErrorMessageTag = useRef() as any;
-    let termsError = true;
-    const checkTerms = () =>{
-        let inputTerms = termsInput;
-        let errorTermsMessage =  termsErrorMessageTag;
-        if(inputTerms.current.checked){
-            inputTerms.current.style.borderColor = "#FFFFFF";
-            inputTerms.current.style.color = "#FFFFFF";
-            errorTermsMessage.current.style.display = "none"
-            return true;
-        }else{
-            inputTerms.current.style.borderColor = "#FF7777";
-            inputTerms.current.style.color = "#FF7777";
-            errorTermsMessage.current.style.display = "block"
-            return false;
-        }
-    }
-
-    //CHECK ALL BEFORE SUBMIT
     const checkAll = () =>{
-        checkName();
-        checkEmail();
-        checkReason();
-        checkDescription();
-        checkTerms();
-
-        // if(checkName()&&
-        // checkEmail()&&
-        // checkReason()&&
-        // checkDescription()&&
-        // checkTerms()){
-        //     alert('Mensaje enviado! Pronto alguien de nuestro equipo se pondrá en contacto contigo!');
-        //     setTimeout(()=>{
-        //         location.reload();
-        //     }, 500)
-        // }
+        //   :)
     }
 
     return(
         <div className={styles.form}>
             <form className={styles.inputs_container} onSubmit={e => e.preventDefault()}>
-                {/* Nombre */}
-                <div className={`${styles.input_container} ${styles.input_name_container}`}>
-                    <Input ref={nameInput} onKeyUp={checkName} type="text" placeholder="Nombre"></Input>
-                    <div ref={nameErrorMessageTag} className={styles.error}>El nombre debe tener al menos 2 caracteres y no debe contener símbolos especiales o números.</div>
-                </div>
-                
-                {/* Email */}
-                <div className={`${styles.input_container} ${styles.input_email_container}`}>
-                    <Input ref={emailInput} onKeyUp={checkEmail} type="email" placeholder="Email"></Input>
-                    <div ref={emailErrorMessageTag} className={styles.error}>Por favor, introduzca un formato de Email válido.</div>
-                </div>
-
-                {/* Razon */}
-                <div className={`${styles.input_container} ${styles.input_reason_container}`}>
-                    <select onChange={checkReason} ref={reasonInput} className={`${styles.form_input} ${styles.select_input}`} name="" id="">
-                        <option className={`${styles.option__false} ${styles.option}`} value="none" disabled selected>Razón</option>
-                        <option className={`${styles.option__true} ${styles.option}`} value="colaboration">Colaboración</option>
-                        <option className={`${styles.option__true} ${styles.option}`} value="incidence">Incidencia</option>
-                        <option className={`${styles.option__true} ${styles.option}`} value="others">Otros</option>
-                    </select>
-                    <div ref={reasonErrorMessageTag} className={styles.error}>Debe seleccionar una razón.</div>
-                </div>
-                {/* Descripcion */}
-                <div className={`${styles.input_container} ${styles.input_description_container}`}>
-                    <textarea ref={descriptionInput}  onKeyUp={checkDescription} className={`${styles.form_input} ${styles.textarea}`} placeholder="Descripción"></textarea>
-                    <div ref={descriptionErrorMessageTag} className={styles.error}>Debe incluir una descripción.</div>
-                </div>
-                {/* Terminos y condiciones */}
-                <div className={styles.terms_cond}>
-                    <div className={styles.terms_input_container}><input ref={termsInput} className={styles.checkbox} type="checkbox" /><p className={styles.accept_cond}>Acepto las <span className={styles.link_cond}><Link  href='https://www.spotify.com/es/legal/live-terms/'> condiciones legales</Link></span></p></div>
-                    <div ref={termsErrorMessageTag} className={styles.error}>Acepte las condiciones legales para continuar.</div>
-                </div>
-                {/* Submit */}
+                <InputName></InputName>
+                <InputEmail></InputEmail>
+                <InputReason></InputReason>
+                <InputDescription></InputDescription>
+                <InputConditions></InputConditions>
                 <div className={`${styles.input_container} ${styles.input_submit_container}`}>
-                    <button className={`${styles.form_input} ${styles.form_input_submit}`} type="submit" onClick={checkAll}>Enviar</button>
+                    <button className={`${styles.form_input} ${styles.form_input_submit}`} type="submit">Enviar</button> {/*onClick={InputName.test.checkName}*/}
                 </div>
             </form>
         </div>
