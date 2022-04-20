@@ -1,7 +1,6 @@
 import {AlbumImage }from './album-image'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import styles from "./slider.module.css";
 import { Pagination } from "swiper";
 
 const SliderSwiper = () =>{
@@ -15,7 +14,7 @@ const SliderSwiper = () =>{
     ];
 
     return(
-        <div className={styles.slider_container}>
+        <div className="slider_container">
             <Swiper
             slidesPerView={3}
             spaceBetween={0}
@@ -26,12 +25,12 @@ const SliderSwiper = () =>{
 
                 {albums.map((alb, index)=>
                 <SwiperSlide key={index}>
-                <div className={styles.swiper_content}>
-                    <div className={`${styles.slide_card} slide-card`}>
-                        <div className={styles.image_container}>
+                <div className={"swiper_content"}>
+                    <div className={`${"slide_card"} slide-card`}>
+                        <div className={"image_container"}>
                             <AlbumImage coverPage={alb.coverPage}></AlbumImage>
                         </div>
-                        <div className={`${styles.swiper_text} swiper_text`}>
+                        <div className={`${"swiper_text"} swiper_text`}>
                             <h3>{alb.name}</h3>
                             <p>Publicado: {alb.publishedDate}</p>
                         </div>
