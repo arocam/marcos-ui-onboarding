@@ -31,8 +31,10 @@ const SliderSwiper = () =>{
                         <div className={styles.image_container}>
                             <AlbumImage coverPage={alb.coverPage}></AlbumImage>
                         </div>
-                        <h3>{alb.name}</h3>
-                        <p>Publicado: {alb.publishedDate}</p>
+                        <div className={`${styles.swiper_text} swiper_text`}>
+                            <h3>{alb.name}</h3>
+                            <p>Publicado: {alb.publishedDate}</p>
+                        </div>
                     </div>
                 </div>
             </SwiperSlide>
