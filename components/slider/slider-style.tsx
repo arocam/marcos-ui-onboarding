@@ -17,18 +17,18 @@ export const SliderStyle = styled.div`
     justify-content: space-evenly;
     background-color: #222222;
   }
-  .title_h2,
-  .title_p {
+  .swiper_section_text_h2,
+  .swiper_section_text_p {
     color: #fff;
     text-align: center;
     margin: 0 auto;
   }
-  .title_h2 {
+  .swiper_section_text_h2 {
     width: 50%;
     font-size: 40px;
     margin-bottom: 24px;
   }
-  .title_p {
+  .swiper_section_text_p {
     width: 80%;
     max-width: 460px;
     font-size: 16px;
@@ -45,7 +45,7 @@ export const SliderStyle = styled.div`
     width: 100%;
     height: 241px;
     border-radius: 12px;
-    transition: all 0.5ss;
+    transition: all 0.5s;
   }
 
 
@@ -68,7 +68,7 @@ export const SliderStyle = styled.div`
   background-color: #D6F379;
   width: 322px;
   border-radius: 24px;
-  transition: background-color 1s linear;
+  transition: background-color .4s linear;
 
 }
 @media (min-width: 600px){
@@ -114,14 +114,12 @@ export const SliderStyle = styled.div`
   overflow: hidden;
 }
 .swiper-slide-active .swiper_text{
-  transition: all 1s ease-in-out;
+  transition: all .5s ease-in-out;
   max-height: 120px;
+  margin-bottom: 20px;
 }
-
-
-
   @media (min-width: 600px) {
-    .title_h2 {
+    .swiper_section_text_h2 {
       font-size: 60px;
     }
   }

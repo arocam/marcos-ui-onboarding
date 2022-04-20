@@ -30,7 +30,7 @@ const SliderSwiper = () =>{
                         <div className={"image_container"}>
                             <AlbumImage coverPage={alb.coverPage}></AlbumImage>
                         </div>
-                        <div className={`${"swiper_text"} swiper_text`}>
+                        <div className={`swiper_text`}>
                             <h3>{alb.name}</h3>
                             <p>Publicado: {alb.publishedDate}</p>
                         </div>

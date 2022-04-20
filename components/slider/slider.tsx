@@ -5,9 +5,9 @@ const Slider = () => {
   return (
     <SliderStyle>
       <div className={"slider_bg"}>
-        <div className={"title"}>
-          <h2 className={"title_h2"}>Los más escuchados</h2>
-          <p className={"title_p"}>
+        <div className={"swiper_section_text"}>
+          <h2 className={"swiper_section_text_h2"}>Los más escuchados</h2>
+          <p className={"swiper_section_text_p"}>
             Disfruta de tu música a un solo click y descube que discos has
             guardado dentro de “mis álbumes”
           </p>
