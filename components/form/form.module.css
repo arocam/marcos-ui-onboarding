@@ -1,3 +1,10 @@
+@font-face{
+    font-family: "helvetica-neue";
+    src: url("/assets/fonts/helvetica-neue-medium.otf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
 .form_bg{
     min-height: 100vh;
     width: 100%;
@@ -5,7 +12,7 @@
 }
 @media (min-width: 992px){
     .form_bg{
-        padding-top: 100px;
+        padding-top: 50px;
     }
 }
 .form_container{
@@ -52,7 +59,7 @@
     font-size: 24px;
     margin-top: 28px;
     max-width: 540px;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: 'helvetica-neue';
 }
 
 /*INPUTS*/
@@ -62,7 +69,6 @@
 .inputs_container{
     display: flex;
     flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif
 }
 .form_input{
     width: 100%;
@@ -93,10 +99,6 @@
     color: #fff;
 }
 
-.textarea{
-    resize: none;
-    height: 100px;
-}
 .form_input:focus{
     border-bottom: 1px solid #fff;
 }
@@ -104,6 +106,36 @@
     display: flex;
     align-items: center;
     font-size: 16px;
+    margin-bottom: 7px;
+}
+.checkbox_div{
+    background-color: #222222;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    height: 18px;
+    width: 18px;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+.checkbox{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: none;
+}
+.checkbox_activator{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.checkbox_activator:hover{
+    cursor: pointer;
+}
+.checkbox_state_indicator{
+    display: none;
 }
 .accept_cond{
     display: inline;
@@ -114,19 +146,22 @@
     display: inline;
     text-decoration: underline;
 }
-.checkbox{
-    margin: 10px;
-}
 .input_submit_container{
     display: flex;
+    margin-bottom: 10px;
 }
 .form_input_submit{
     font-size: 24px;
     width: 80px;
-    margin-top: 91px;
+    margin-top: 60px;
     margin-left: auto;
 }
 .form_input_submit:hover{
     cursor: pointer;
     border-bottom: 1px solid #fff;
+}
+.form_error_message{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
