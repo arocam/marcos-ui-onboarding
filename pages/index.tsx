@@ -10,7 +10,7 @@ const Home2: NextPage = () =>{
                 <title>UI Onboarding 2.0</title>
             </Head>
             <Header></Header>
-            <Hero linkHref={"/ui-dev"} linkName={"Log in con Spotify"}></Hero>
+            <Hero linkHref={"/search-album"} linkName={"Log in con Spotify"}></Hero>
         </>
     )
 }

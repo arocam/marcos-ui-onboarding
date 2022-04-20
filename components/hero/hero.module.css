@@ -97,11 +97,11 @@
   font-size: 16px;
   color: #fff;
 }
-
+.link_desc{
+  margin-right: 20px;
+}
 .link_container{
   display: flex;
-  width: 120px;
-  justify-content: space-between;
   align-items: center;
 }
 .link_container:hover{

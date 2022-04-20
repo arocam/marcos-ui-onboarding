@@ -10,11 +10,11 @@ gsap.registerPlugin(ScrollToPlugin);
 const HeroText = (props) =>{
     const {linkName, linkHref} = props;
     
-    const goToForm = () =>{
+    const goToLink = () =>{
         if (linkHref.startsWith('#')) {
             gsap.to(window, {duration: 1.7, scrollTo:{y:linkHref}})
         } else{
-            location.replace(linkHref)
+            location = linkHref;
         }
     }
     
@@ -30,10 +30,10 @@ const HeroText = (props) =>{
                 {/* LINK TO CONTACT */}
                 
                 {/* <Link href=""> */}
-                <div onClick={goToForm} className={styles.link_container} >
+                <div onClick={goToLink} className={styles.link_container} >
                     <p className={styles.link_desc}>{linkName}</p>
                     <svg className={styles.link_vector} width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http:www.w3.org/2000/svg">
-                        <path d="M10 1L17 8L10 15M1 8H17H1Z" stroke="white" /*stroke-width="2" stroke-linecap="round" stroke-linejoin="round"*/ />
+                        <path d="M10 1L17 8L10 15M1 8H17H1Z" stroke="white"/>
                     </svg>
                 </div>
                 {/* </Link> */}
