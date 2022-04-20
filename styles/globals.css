@@ -31,6 +31,11 @@ b{
   margin-block-start: 0;
   margin-block-end: 0;
 }
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .mySwiper{
   height: 420px;
   overflow: hidden;
