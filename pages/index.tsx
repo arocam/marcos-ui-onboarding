@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/header/header";
+import Hero from "../components/hero/hero";
 
 const Home2: NextPage = () =>{
     return(
@@ -9,6 +10,7 @@ const Home2: NextPage = () =>{
                 <title>UI Onboarding 2.0</title>
             </Head>
             <Header></Header>
+            <Hero linkHref={"/ui-dev"} linkName={"Log in con Spotify"}></Hero>
         </>
     )
 }
