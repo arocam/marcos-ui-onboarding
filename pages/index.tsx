@@ -11,6 +11,7 @@ const Home2: NextPage = () =>{
             </Head>
             <Header></Header>
             <Hero linkHref={"/search-album"} linkName={"Log in con Spotify"}></Hero>
+            
         </>
     )
 }
