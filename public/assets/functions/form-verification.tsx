@@ -7,7 +7,9 @@ export const Hola = {
         selectOption: '',
         selectError: '',
         descInput: '',
-        descError: ''
+        descError: '',
+        termState: '',
+        termError: ''
     },
     checkName : () =>{
         const nameAllowedCharacters = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
@@ -79,6 +81,21 @@ export const Hola = {
                 eInput.style.borderColor = "#FF7777";
                 eInput.style.color = "#FF7777";
                 eError.style.display = "block"
+                return false;
+            }
+        }else{
+            return 'incomplete';
+        }
+    },
+    checkTerms: ()=>{
+        let eState = Hola.values.termState as any;
+        let eError = Hola.values.termError as any;
+        if (eError != '') {
+            if(eState){
+                eError.style.display = "none"
+                return true;
+            }else{
+                eError.current.style.display = "block"
                 return false;
             }
         }else{

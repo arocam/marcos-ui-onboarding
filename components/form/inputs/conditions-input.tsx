@@ -10,6 +10,7 @@ export const InputConditions = () =>{
     const termsInput = useRef() as any;
     const termsErrorMessageTag = useRef() as any;
     const termsStateIndicator = useRef() as any;
+
     const changeStateIcon = () =>{
         if (termsStateIndicator.current.style.display == 'block') {
             termsStateIndicator.current.style.display = 'none';
@@ -17,21 +18,12 @@ export const InputConditions = () =>{
             termsStateIndicator.current.style.display = 'block';
         }
     }
+    
     const checkTerms = () =>{
-        let inputTerms = termsInput;
-        let errorTermsMessage =  termsErrorMessageTag;
+        Hola.values.termError = termsInput.current;
+        Hola.values.termState =  termsErrorMessageTag.current;
         changeStateIcon()
-        if(inputTerms.current.checked){
-            inputTerms.current.style.borderColor = "#FFFFFF";
-            inputTerms.current.style.color = "#FFFFFF";
-            errorTermsMessage.current.style.display = "none"
-            return true;
-        }else{
-            inputTerms.current.style.borderColor = "#FF7777";
-            inputTerms.current.style.color = "#FF7777";
-            errorTermsMessage.current.style.display = "block"
-            return false;
-        }
+        Hola.checkTerms();
     }
     
     return(

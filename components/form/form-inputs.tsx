@@ -12,7 +12,7 @@ export const FormInputs = () =>{
     const [selected, setSelected] = useState('');
     const formStateMessage = useRef() as any;
     const checkAll = () =>{
-        if (Hola.checkName() === true && Hola.checkEmail() === true && Hola.checkDescription() === true && Hola.checkReason() === true) {
+        if (Hola.checkName() === true && Hola.checkEmail() === true && Hola.checkDescription() === true && Hola.checkReason() === true && Hola.checkTerms() === true) {
             setSelected('¡Formulario enviado!');
             formStateMessage.current.style.color = "#FFFFFF";
             formStateMessage.current.style.display = "block"
