@@ -8,7 +8,7 @@ const Home2: NextPage = () =>{
             <Head>
                 <title>UI Onboarding 2.0</title>
             </Head>
-            
+            <Header></Header>
         </>
     )
 }
