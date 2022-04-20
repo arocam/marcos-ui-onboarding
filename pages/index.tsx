@@ -1,30 +1,15 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { NextPage } from 'next'
-import Gallery from '../components/gallery/gallery'
-import Header from '../components/header/header'
-import Hero from '../components/hero/hero'
-import Slider from '../components/slider/slider'
-import { Form } from '../components/form/form'
+import { NextPage } from "next";
+import Head from "next/head";
+import Header from "../components/header/header";
 
-const Home: NextPage = () => {
-  return (
-    <div>
-      {/* HEAD */}
-      <Head>
-        <title>UI Onboarding</title>
-      </Head>
-
-      <Header></Header>
-
-      <Hero></Hero>
-
-      <Gallery></Gallery>
-
-      <Slider></Slider>
-
-      <Form></Form>
-    </div>
-  )
+const Home2: NextPage = () =>{
+    return(
+        <>
+            <Head>
+                <title>UI Onboarding 2.0</title>
+            </Head>
+            
+        </>
+    )
 }
-export default Home;
+export default Home2;
