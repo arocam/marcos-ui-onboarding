@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
       <Header></Header>
 
-      <Hero></Hero>
+      <Hero linkHref={"#form"} linkName={"Contacto"}></Hero>
 
       <Gallery></Gallery>
 
