@@ -6,8 +6,8 @@ export const GlobalStyles = createGlobalStyle`
     body {
       padding: 0;
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-
+      /* font-family: 'Montserrat', sans-serif; */
+      font-family: "montserrat";
     }
     body{
       background-color: #222222;
