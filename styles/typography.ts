@@ -43,4 +43,25 @@ export const Fonts = css`
         font-style: normal;
         font-display: fallback;
     }
+    @font-face{
+        font-family: "montserrat";
+        src: url("/assets/fonts/montserrat-bold.otf");
+        font-weight: 700;
+        font-style: bold;
+        font-display: fallback;
+    }
+    @font-face{
+        font-family: "montserrat";
+        src: url("/assets/fonts/montserrat-semibold.otf");
+        font-weight: 600;
+        font-style: normal;
+        font-display: fallback;
+    }
+    @font-face{
+        font-family: "montserrat";
+        src: url("/assets/fonts/montserrat-regular.otf");
+        font-weight: 400;
+        font-style: normal;
+        font-display: fallback;
+    }
 `
