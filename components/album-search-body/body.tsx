@@ -2,6 +2,7 @@ import { BodyStyle } from "./body-style";
 import { TitleH1 } from "../global/enjoy-h1";
 import { Paragraph } from "../global/paragraph";
 import { MyInput } from "../global/input2";
+import { MySwiper } from "../swiper2/swiper";
 
 
 export const Body = () =>{
@@ -12,8 +13,9 @@ export const Body = () =>{
                 <Paragraph>Encuentra tus artistas favoritos gracias a nuestro buscador y guarda tus álbumes favoritos</Paragraph>
             </div>
             <div>
-            <MyInput></MyInput>
+                <MyInput></MyInput>
             </div>
+            <MySwiper></MySwiper>
         </BodyStyle>
     )
 }
